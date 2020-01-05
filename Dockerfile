@@ -1,4 +1,4 @@
-FROM adoptopenjdk:12-jdk-openj9
+FROM adoptopenjdk:13-jdk-openj9
 
 RUN apt-get update \
 	&& apt-get install --yes --no-install-recommends \
@@ -8,7 +8,7 @@ RUN apt-get update \
 	patch \
 	&& rm -rf /var/lib/apt/lists/*
 
-ENV GRADLE_VERSION=5.6.2
+ENV GRADLE_VERSION=6.0.1
 ENV GRADLE_HOME=/opt/gradle
 
 RUN wget --no-verbose --output-document gradle.zip "https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip" \
@@ -21,7 +21,7 @@ RUN wget --no-verbose --output-document gradle.zip "https://services.gradle.org/
 	&& rm gradle.zip.sha256 \
 	&& gradle --version
 
-ENV MAVEN_VERSION=3.6.2
+ENV MAVEN_VERSION=3.6.3
 ENV MAVEN_HOME=/opt/maven
 
 RUN wget --no-verbose --output-document maven.zip "https://www.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.zip" \

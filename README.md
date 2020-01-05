@@ -6,9 +6,9 @@ Docker image used to build JVM applications based on Git patches in Drone CI env
 
 This image has the following components:
 
-* JVM (adoptopenjdk:12-jdk-openj9)
-* Gradle (5.6.2)
-* Maven (3.6.2)
+* JVM (adoptopenjdk:13-jdk-openj9)
+* Gradle (6.0.1)
+* Maven (3.6.3)
 * Git
 * `patch`
 
